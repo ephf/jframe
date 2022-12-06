@@ -1,4 +1,6 @@
-import java.lang.reflect.Method;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Vector;
 
 import javax.swing.JFrame;
@@ -14,10 +16,15 @@ public class Main {
     JFrame.class
   };
 
-  public static void main(String[] args) {
-    Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-      System.out.println("exit");
-    }));
+  public static void main(String[] args) throws IOException {
+      BufferedReader reader = new BufferedReader(
+            new InputStreamReader(System.in));
+ 
+        // Reading data using readLine
+        String name = reader.readLine();
+ 
+        // Printing the read line
+        System.out.println(name);
   }
 
   static void onMessage(Vector<String> content) {
