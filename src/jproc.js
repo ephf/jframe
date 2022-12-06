@@ -1,6 +1,6 @@
 const { exec } = require("child_process");
 
-const java = exec("java src/Main.java");
+const java = exec("cd err && java ../src/Main.java");
 java.stderr.pipe(process.stderr);
 
 module.exports = java;
